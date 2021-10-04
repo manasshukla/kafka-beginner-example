@@ -26,11 +26,11 @@ public class SimpleConsumerDemo {
     private static final Logger LOGGER = LoggerFactory.getLogger(SimpleConsumerDemo.class);
 
     public static void main(String[] args) throws IOException {
-        String topic = "first-topic";
+        String topic = "twitter-topic";
         int timeout = 100;
         Properties consumerProps = ConsumerProperties.getInstance().getProperties();
 
-        KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(consumerProps);
+        KafkaConsumer<String, String> consumer = new KafkaConsumer<>(consumerProps);
 
         consumer.subscribe(Collections.singleton(topic));
 

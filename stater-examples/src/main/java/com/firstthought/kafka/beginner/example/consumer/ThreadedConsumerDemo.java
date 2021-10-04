@@ -31,7 +31,7 @@ public class ThreadedConsumerDemo {
         new ThreadedConsumerDemo().run();
     }
 
-    public void run() throws IOException {
+    public void run() {
         Properties consumerProps = ConsumerProperties.getInstance().getProperties();
 
         String topic = "first-topic";
@@ -69,7 +69,7 @@ public class ThreadedConsumerDemo {
         }
     }
 
-    public class ConsumerRunnable implements Runnable {
+    public static class ConsumerRunnable implements Runnable {
 
         private CountDownLatch latch;
         private KafkaConsumer<String, String> consumer;
